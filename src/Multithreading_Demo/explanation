@@ -1,0 +1,6 @@
+There are two ways to create new Threads in Java:
+
+1. Create a subclass of the Thread class and the instance will have access to a run method
+
+2. Create a class that implements the runnable interface and then
+pass the runnable instance as an argument to the constructor of the Thread class
