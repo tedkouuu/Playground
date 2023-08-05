@@ -17,6 +17,11 @@ public class Recursion_vs_Iteration {
         int sumTwo = sumNumbersRecursion(arr, 0);
 
         System.out.println("Recursion sum: " + sumTwo);
+
+        int sumThree = sumNumbersRecursionBackwards(arr, arr.length - 1);
+
+        System.out.println("Backwards Recursion sum: " + sumThree);
+
     }
 
     //   Iterative method
@@ -40,6 +45,18 @@ public class Recursion_vs_Iteration {
 
 
         return numbers[index] + sumNumbersRecursion(numbers, index + 1);
+
+    }
+
+    //    Recursive method backwards
+    public static int sumNumbersRecursionBackwards(int[] numbers, int index) {
+
+        if (index < 0) {
+            return 0;
+        }
+
+
+        return numbers[index] + sumNumbersRecursionBackwards(numbers, index - 1);
 
     }
 }
