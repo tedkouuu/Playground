@@ -1,4 +1,4 @@
-package Multithreading_Demo;
+package Multithreading;
 
 // Create a class that implements the runnable interface
 public class MyRunnable implements Runnable {

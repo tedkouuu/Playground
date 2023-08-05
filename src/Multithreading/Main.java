@@ -1,4 +1,4 @@
-package Multithreading_Demo;
+package Multithreading;
 
 public class Main {
 

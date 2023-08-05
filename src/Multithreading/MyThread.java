@@ -1,4 +1,4 @@
-package Multithreading_Demo;
+package Multithreading;
 
 // Create a subclass of the Thread class
 public class MyThread extends Thread {
