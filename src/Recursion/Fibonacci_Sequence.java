@@ -7,20 +7,20 @@ public class Fibonacci_Sequence {
 
         Scanner scanner = new Scanner(System.in);
 
-        int n = Integer.parseInt(scanner.nextLine());
+        int i = Integer.parseInt(scanner.nextLine());
 
-        int result = calculateFactorial(n);
+        int result = calculateFactorial(i);
         System.out.println(result);
     }
 
-    public static int calculateFactorial(int n) {
+    public static int calculateFactorial(int i) {
 
-        if (n == 1) {
+        if (i == 1) {
             return 1;
         }
 
 
-        return n * calculateFactorial(n - 1);
+        return i * calculateFactorial(i - 1);
 
     }
 }

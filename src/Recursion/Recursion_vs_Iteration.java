@@ -24,7 +24,7 @@ public class Recursion_vs_Iteration {
 
     }
 
-    //   Iterative method
+    //  Iterative method
     private static int sumNumbersLoop(int[] arr) {
 
         int sum = 0;
