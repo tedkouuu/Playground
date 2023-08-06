@@ -1,8 +1,13 @@
 package Recursion;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Paths_In_Labyrinth {
+
+    public static List<Character> path = new ArrayList<>();
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -23,25 +28,41 @@ public class Paths_In_Labyrinth {
 
     private static void findPath(char[][] labyrinth, int row, int col, char direction) {
 
-        if (isInBounds(labyrinth, row, col)) {
+        if (!isInBounds(labyrinth, row, col)
+                || labyrinth[row][col] == 'V'
+                || labyrinth[row][col] == '*') {
+            return;
+        }
+
+        path.add(direction);
+
+        if (labyrinth[row][col] == 'e') {
+            printPath();
+            path.remove(path.size() - 1);
             return;
         }
 
 //      V - visited
         labyrinth[row][col] = 'V';
-
-//      Down
-        findPath(labyrinth, row - 1, col, 'D');
-
-//      Up
-        findPath(labyrinth, row + 1, col, 'U');
-
-//      Left
+//      UP
+        findPath(labyrinth, row - 1, col, 'U');
+//      DOWN
+        findPath(labyrinth, row + 1, col, 'D');
+//      LEFT
         findPath(labyrinth, row, col - 1, 'L');
-
-//      Right
+//      RIGHT
         findPath(labyrinth, row, col + 1, 'R');
 
+        labyrinth[row][col] = '-';
+
+        path.remove(path.size() - 1);
+    }
+
+    private static void printPath() {
+        for (int i = 1; i < path.size(); i++) {
+            System.out.print(path.get(i));
+        }
+        System.out.println();
     }
 
     private static boolean isInBounds(char[][] labyrinth, int row, int col) {
