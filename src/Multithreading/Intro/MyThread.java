@@ -1,4 +1,4 @@
-package Multithreading;
+package Multithreading.Intro;
 
 // Create a subclass of the Thread class
 public class MyThread extends Thread {
