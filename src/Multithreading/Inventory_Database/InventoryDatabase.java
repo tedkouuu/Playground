@@ -3,7 +3,6 @@ package Multithreading.Inventory_Database;
 import java.util.NavigableMap;
 import java.util.TreeMap;
 import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class InventoryDatabase {
@@ -13,6 +12,8 @@ public class InventoryDatabase {
     /*
          There is a significant performance improvement when using a ReentrantLock. It
          allows reader threads to run concurrently.
+
+         Keep in mind that ReentrantReadWriteLock is not always better than a conventional lock.
 
      */
 
